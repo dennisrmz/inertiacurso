@@ -1,5 +1,14 @@
 <template>
-  <h1 class="text-2xl font-semibold">Aqui se mostrara el listado de contactos</h1>
+  <AppLayout title="Contacto Crear">
+    <template #header>
+      
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        Crear Contacto
+    </h2>
+    </template>
+    <h1 class="text-2xl font-semibold">Aqui se mostrara el listado de contactos</h1>
+
+  </AppLayout>
 </template>
 
 <script>

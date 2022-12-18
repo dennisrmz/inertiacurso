@@ -9,6 +9,12 @@ use Inertia\Inertia;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +22,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Contacts/IndexView',[
+        $contacts = Contact::all();
 
+        return Inertia::render('Contacts/IndexView',[
+            "contacts" => $contacts
         ]);
     }
 
@@ -64,7 +72,7 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
         return Inertia::render('Contacts/EditView',[
-            
+            "contact" => $contact
         ]);
     }
 
