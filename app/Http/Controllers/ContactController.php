@@ -22,8 +22,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
-
+        $contacts = Contact::with(['organization', 'country'])->get();
+        
         return Inertia::render('Contacts/IndexView',[
             "contacts" => $contacts
         ]);

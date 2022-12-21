@@ -16,53 +16,39 @@
                 <thead class="border-b bg-gray-50">
                   <tr>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                      #
+                      Name
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                      First
+                      Organization
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                      Last
+                      City
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                      Handle
+                      Phone
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                      Actions
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="bg-white border-b">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Mark
+                  <tr v-for="(contact, index) in contacts"  :key="index" class="bg-white border-b">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ contact.first_name + ' ' + contact.last_name }}</td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-wrap">
+                     {{ contact.organization.name }}
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Otto
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-wrap">
+                      {{ contact.city }}
                     </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      @mdo
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-wrap">
+                      {{ contact.phone }}
                     </td>
-                  </tr>
-                  <tr class="bg-white border-b">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Jacob
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Thornton
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      @fat
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-wrap">
+                      <i class="fas fa-chevron-right"></i>
                     </td>
                   </tr>
-                  <tr>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-                    <td colspan="2" class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                      Larry the Bird
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      @twitter
-                    </td>
-                  </tr>
+                 
                 </tbody>
               </table>
             </div>
