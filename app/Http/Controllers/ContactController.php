@@ -22,7 +22,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::with(['organization', 'country'])->get();
+        $contacts = Contact::with(['organization', 'country'])->paginate(10);
         
         return Inertia::render('Contacts/IndexView',[
             "contacts" => $contacts

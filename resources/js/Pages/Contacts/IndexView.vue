@@ -33,7 +33,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(contact, index) in contacts"  :key="index" class="bg-white border-b">
+                  <tr v-for="(contact, index) in contacts.data"  :key="index" class="bg-white border-b">
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ contact.first_name + ' ' + contact.last_name }}</td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-wrap">
                      {{ contact.organization.name }}
@@ -51,6 +51,7 @@
                  
                 </tbody>
               </table>
+              <PaginationVue :pagination="contacts"></PaginationVue>
             </div>
           </div>
         </div>
@@ -63,14 +64,15 @@
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
-
+import PaginationVue from "@/Components/PaginationVue.vue";
 export default {
   components: {
-    AppLayout
+    AppLayout,
+    PaginationVue,
   },
   props: {
     contacts: {
-      type: Array,
+      type: Object,
       required: true
     },
   }

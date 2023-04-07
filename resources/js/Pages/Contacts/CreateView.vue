@@ -6,7 +6,7 @@
         Crear Contacto
     </h2>
     </template>
-    <h1 class="text-2xl font-semibold">Aqui se mostrara el listado de contactos</h1>
+    <h1 class="text-2xl font-semibold">Aqui se mostrara el form para crear un contacto</h1>
 
   </AppLayout>
 </template>
